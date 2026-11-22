@@ -1,0 +1,204 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #70a8f5,
+        #a9a5ff,
+        #e8aaff
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 0;
+}
+
+.container {
+    width: 850px;
+    max-width: 90%;
+
+    background: rgba(255,255,255,0.9);
+
+    padding: 45px;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+
+    position: relative;
+    z-index: 2;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    background: linear-gradient(135deg,#6748ff,#d28bff);
+    color: white;
+    font-size: 38px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+h1 {
+    color: #171a30;
+    font-size: 32px;
+}
+
+h2 {
+    color: #29264b;
+}
+
+.drop-area {
+    border: 2px dashed #9aaff0;
+    border-radius: 15px;
+    padding: 35px 15px;
+    text-align: center;
+    background: #f0f2ff;
+    cursor: pointer;
+}
+
+.drop-area:hover,
+.drop-area.dragover {
+    background: #e5eaff;
+    border-color: #654bff;
+}
+
+.upload-icon {
+    font-size: 40px;
+    color: #674bff;
+}
+
+.drop-area p {
+    color: #7298dc;
+    font-size: 18px;
+}
+
+.drop-area span {
+    color: #7298dc;
+}
+
+#fileInput {
+    display: none;
+}
+
+button {
+    border: none;
+    background: #684cff;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #4e35d5;
+}
+
+.question-box {
+    display: flex;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.question-box input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 14px;
+    font-size: 16px;
+}
+
+.send {
+    margin: 0;
+    width: 48px;
+    font-size: 20px;
+}
+
+.answer-section {
+    margin-top: 25px;
+    background: #f0efff;
+    padding: 20px;
+    border-radius: 12px;
+    color: #29264b;
+    line-height: 1.7;
+}
+
+.message {
+    color: green;
+}
+
+.document-info {
+    color: #246b43;
+    line-height: 1.8;
+}
+
+.feature {
+    position: fixed;
+    color: white;
+    border: 1px solid white;
+    padding: 15px 22px;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.top {
+    top: 5%;
+    right: 29%;
+}
+
+.right {
+    top: 12%;
+    right: 3%;
+}
+
+.left {
+    bottom: 15%;
+    left: 3%;
+}
+
+.bottom {
+    bottom: 5%;
+    left: 22%;
+}
+
+.comparison {
+    top: 20%;
+    right: 28%;
+}
+
+@media(max-width:700px) {
+
+    .container {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .feature {
+        display: none;
+    }
+}

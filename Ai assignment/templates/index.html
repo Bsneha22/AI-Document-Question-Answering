@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Space</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="feature top">💬 Ask Questions</div>
+    <div class="feature right">📄 Data Extraction</div>
+    <div class="feature left">🛡️ Compliance Check</div>
+    <div class="feature bottom">📑 Summarization</div>
+    <div class="feature comparison">⚖️ Comparison</div>
+
+    <main class="container">
+
+        <header>
+            <div class="logo">✦</div>
+            <h1>Welcome to AI Space</h1>
+        </header>
+
+        <section class="upload-section">
+
+            <h2>Upload Your Document</h2>
+
+            <form action="/upload"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <div class="drop-area" id="dropArea">
+
+                    <div class="upload-icon">☁</div>
+
+                    <p>Drop files here to start analyzing</p>
+
+                    <span>or click to browse</span>
+
+                    <input type="file"
+                           name="document"
+                           id="fileInput"
+                           accept=".pdf,.txt"
+                           required>
+
+                </div>
+
+                <p id="fileName">No file selected</p>
+
+                <button type="submit">
+                    Upload Document
+                </button>
+
+            </form>
+
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+
+            {% if document_name %}
+                <p class="document-info">
+                    Uploaded: {{ document_name }}
+                    <br>
+                    Knowledge Base: {{ fact_count }} facts
+                </p>
+            {% endif %}
+
+        </section>
+
+
+        <section class="question-section">
+
+            <h2>Ask a Question</h2>
+
+            <form action="/ask" method="POST">
+
+                <div class="question-box">
+
+                    <input
+                        type="text"
+                        name="question"
+                        placeholder="Ask a question..."
+                        value="{{ question or '' }}"
+                        required
+                    >
+
+                    <button type="submit" class="send">
+                        ➤
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        {% if answer %}
+
+        <section class="answer-section">
+
+            <h2>Generated Answer</h2>
+
+            <p>{{ answer }}</p>
+
+        </section>
+
+        {% endif %}
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
